@@ -1,1 +1,13 @@
-
+name: Generowanie_Sprawka
+on: push
+jobs:
+  generator_pdf:
+    runs-on: Ubuntu-24.04
+    steps:
+      - run: sudo apt-get install texlive-xetex inkscape pandoc
+      - uses: actions/checkout@v4
+      - run: pip install open-atmos-jupyter-utils pint scipy nbconvert ipykernel
+      - run: python -m -nbconvert --to pdf --execute MUP_lab1.ipynb checkout
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sprawko.pdf

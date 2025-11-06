@@ -10,4 +10,4 @@ jobs:
       - run: python -m nbconvert --to pdf --execute MUP_lab1.ipynb checkout
       - uses: actions/upload-artifact@v4
         with:
-          path: sprawko.pdf
+          path: MUP_lab1.pdf

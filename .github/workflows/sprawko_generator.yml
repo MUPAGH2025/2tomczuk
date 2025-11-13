@@ -4,6 +4,7 @@ jobs:
   generator_pdf:
     runs-on: Ubuntu-24.04
     steps:
+      - run: sudo apt-get update
       - run: sudo apt-get install texlive-xetex inkscape pandoc
       - uses: actions/checkout@v4
       - run: pip install open-atmos-jupyter-utils pint scipy nbconvert ipykernel

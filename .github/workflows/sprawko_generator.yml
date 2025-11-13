@@ -7,7 +7,7 @@ jobs:
       - run: sudo apt-get install texlive-xetex inkscape pandoc
       - uses: actions/checkout@v4
       - run: pip install open-atmos-jupyter-utils pint scipy nbconvert ipykernel
-      - run: python -m nbconvert --to pdf --execute MUP_lab2.ipynb
+      - run: python -m nbconvert --to pdf --execute shallow_water.ipynb
       - uses: actions/upload-artifact@v4
         with:
-          path: MUP_lab2.pdf
+          path: shallow_water.pdf
